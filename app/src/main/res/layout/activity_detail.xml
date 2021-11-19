@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context=".DetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentScrim="@color/Orange"
+            app:expandedTitleTextAppearance="@style/expandedBarTextStyle"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+            app:title="Detail">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:rotationX="12">
+
+                <ImageView
+                    android:id="@+id/ivDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Imageview"
+                    android:foreground="@drawable/transparent"
+                    android:src="@drawable/img_shrimp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvNameDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Garlic Butter Shirmp"
+                    android:textColor="@color/white"
+                    android:textSize="27dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/tbDetail"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@android:color/transparent"
+                android:theme="?attr/actionBarTheme"
+                app:layout_collapseMode="pin" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/_40dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvCalories"
+                android:layout_width="@dimen/_120dp"
+                android:layout_height="@dimen/_100dp"
+                android:layout_marginStart="@dimen/_20dp"
+                android:layout_marginTop="@dimen/_20dp"
+                app:cardBackgroundColor="@color/colorYellow"
+                app:cardCornerRadius="@dimen/_10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tvCalories"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_20dp"
+                    android:layout_marginTop="@dimen/_20dp"
+                    android:gravity="center"
+                    android:text="@string/txt_calories"
+                    android:textSize="@dimen/_12sp" />
+
+                <TextView
+                    android:id="@+id/tvValueCalories"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:layout_marginBottom="@dimen/_30dp"
+                    android:gravity="bottom"
+                    android:text="@string/txt_300_cal"
+                    android:textSize="24dp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvCarbo"
+                android:layout_width="@dimen/_120dp"
+                android:layout_height="@dimen/_100dp"
+                android:layout_marginStart="@dimen/_8dp"
+                app:cardBackgroundColor="@color/colorBlue"
+                app:cardCornerRadius="@dimen/_10dp"
+                app:layout_constraintBottom_toBottomOf="@id/cvCalories"
+                app:layout_constraintStart_toEndOf="@id/cvCalories"
+                app:layout_constraintTop_toTopOf="@id/cvCalories">
+
+                <TextView
+                    android:id="@+id/tvCarbo"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_20dp"
+                    android:layout_marginTop="@dimen/_20dp"
+                    android:gravity="center"
+                    android:text="@string/txt_carbo"
+                    android:textSize="@dimen/_12sp" />
+
+                <TextView
+                    android:id="@+id/tvValueCarbo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:layout_marginBottom="@dimen/_30dp"
+                    android:gravity="bottom"
+                    android:text="@string/txt_300_cal"
+                    android:textSize="24dp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvProtein"
+                android:layout_width="@dimen/_120dp"
+                android:layout_height="@dimen/_100dp"
+                android:layout_marginEnd="@dimen/_20dp"
+                app:cardBackgroundColor="@color/Orange"
+                app:cardCornerRadius="@dimen/_10dp"
+                app:layout_constraintBottom_toBottomOf="@id/cvCarbo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cvCarbo"
+                app:layout_constraintTop_toTopOf="@id/cvCarbo">
+
+                <TextView
+                    android:id="@+id/tvProtein"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_20dp"
+                    android:layout_marginTop="@dimen/_20dp"
+                    android:gravity="center"
+                    android:text="@string/txt_protein"
+                    android:textSize="@dimen/_12sp" />
+
+                <TextView
+                    android:id="@+id/tvValueProtein"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:layout_marginBottom="@dimen/_30dp"
+                    android:gravity="bottom"
+                    android:text="@string/txt_300_cal"
+                    android:textSize="24dp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/tvDecriptionDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20dp"
+                android:layout_marginTop="@dimen/_40dp"
+                android:layout_marginEnd="@dimen/_20dp"
+                android:text="@string/txt_description"
+                app:layout_constraintTop_toBottomOf="@id/cvCalories" />
+
+            <TextView
+                android:id="@+id/tvResepLable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20dp"
+                android:layout_marginTop="@dimen/_20dp"
+                android:layout_marginEnd="@dimen/_20dp"
+                android:text="@string/txt_resep"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDecriptionDetail" />
+
+            <TextView
+                android:id="@+id/tvIngredientsLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20dp"
+                android:layout_marginTop="@dimen/_8dp"
+                android:layout_marginEnd="@dimen/_20dp"
+                android:text="ingredients"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvResepLable" />
+
+            <TextView
+                android:id="@+id/tvIngredients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20dp"
+                android:layout_marginTop="@dimen/_4dp"
+                android:layout_marginEnd="@dimen/_20dp"
+                android:text="@string/txt_ingredients"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvIngredientsLabel" />
+
+            <TextView
+                android:id="@+id/tvLabelInstruction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20dp"
+                android:layout_marginTop="@dimen/_8dp"
+                android:layout_marginEnd="@dimen/_20dp"
+                android:text="@string/txt_instruction"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvIngredients" />
+
+            <TextView
+                android:id="@+id/tvInstruction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20dp"
+                android:layout_marginTop="@dimen/_4dp"
+                android:layout_marginEnd="@dimen/_20dp"
+                android:text="@string/txt_instruction"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvLabelInstruction" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
